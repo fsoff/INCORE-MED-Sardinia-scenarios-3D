@@ -575,14 +575,30 @@ body{overflow:auto;}
 .deg-label{background:rgba(255,255,255,.92);padding:3px 8px;border-radius:999px;box-shadow:0 5px 12px rgba(42,49,125,.12);white-space:nowrap;}
 @media (max-width:760px){.orient-zones{font-size:7.5px;}.rotate-btn{top:12px;}}
 /* Cinematic scene: compact weather controls remain outside annotation targets. */
-.weather-readout{position:absolute;left:18px;bottom:16px;z-index:21;max-width:240px;padding:10px 12px;border-radius:12px;background:rgba(24,40,46,.79);border:1px solid rgba(255,255,255,.22);color:#f6f4eb;backdrop-filter:blur(8px);pointer-events:auto;font-size:11px;line-height:1.35}
-.weather-readout span{display:block;font-weight:800}.weather-readout small{display:block;font-size:8px;opacity:.76;margin-top:3px}
-.weather-readout button{font:inherit;font-size:9px;color:inherit;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);border-radius:6px;padding:4px 7px;margin-top:7px;cursor:pointer}
-@media(max-width:700px){.weather-readout{left:9px;bottom:9px;max-width:170px;padding:6px 8px;font-size:9px}.weather-readout small{font-size:7px}}
-.viewpoints{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);z-index:22;padding:9px 12px;border-radius:12px;background:rgba(24,40,46,.82);color:#f6f4eb;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);pointer-events:auto;text-align:center}
-.viewpoints>span{font-size:8px;letter-spacing:.14em;font-weight:800}.viewpoints>div{display:flex;gap:5px;margin-top:6px}.viewpoints button{background:transparent;color:inherit;border:1px solid rgba(255,255,255,.3);border-radius:6px;padding:6px 9px;font:inherit;font-size:10px;font-weight:700;cursor:pointer}.viewpoints button[aria-pressed=true]{background:#e4d6ba;color:#23343d;border-color:#e4d6ba}
-@media(max-width:1000px){.viewpoints{bottom:108px;left:18px;transform:none}.viewpoints button{padding:5px 7px;font-size:9px}}
-.viewpoints .scene-source{border:0;padding:3px 0 0;font-size:8px;font-weight:400;opacity:.72}
+/* Controlli di esplorazione: blu di progetto, testo e filetti bianchi */
+.weather-readout{position:absolute;left:18px;bottom:16px;z-index:21;max-width:250px;padding:11px 13px 12px;border-radius:16px;background:rgba(42,49,125,.95);border:1.5px solid rgba(255,255,255,.88);color:#fff;box-shadow:0 14px 30px rgba(18,26,70,.30);backdrop-filter:blur(8px);pointer-events:auto;font-size:11px;line-height:1.35}
+.weather-readout span{display:block;font-weight:900;letter-spacing:.01em}
+.weather-readout small{display:block;font-size:8.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;opacity:.72;margin-top:3px}
+.weather-readout button{font:inherit;font-size:9.5px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:transparent;border:1.5px solid #fff;border-radius:999px;padding:5px 11px;margin-top:8px;cursor:pointer;transition:background .2s ease,color .2s ease}
+.weather-readout button:hover{background:rgba(255,255,255,.14)}
+.weather-readout button[aria-pressed=true]{background:#fff;color:var(--blue)}
+@media(max-width:700px){.weather-readout{left:9px;bottom:9px;max-width:170px;padding:7px 9px;font-size:9px}.weather-readout small{font-size:7px}}
+.viewpoints{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:22;padding:10px 13px 8px;border-radius:18px;background:rgba(42,49,125,.95);color:#fff;border:1.5px solid rgba(255,255,255,.88);box-shadow:0 16px 34px rgba(18,26,70,.32);backdrop-filter:blur(8px);pointer-events:auto;text-align:center}
+.viewpoints>span{display:flex;align-items:center;justify-content:center;gap:9px;font-size:8.5px;letter-spacing:.16em;font-weight:900;color:#fff}
+.viewpoints>span::before,.viewpoints>span::after{content:"";flex:1;min-width:18px;height:1px;background:rgba(255,255,255,.55)}
+.viewpoints>div{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:8px}
+.viewpoints button{display:inline-flex;align-items:center;gap:7px;min-height:30px;background:transparent;color:#fff;border:1.5px solid #fff;border-radius:999px;padding:5px 13px 5px 10px;font:inherit;font-size:10.5px;font-weight:900;letter-spacing:.02em;cursor:pointer;transition:background .2s ease,color .2s ease,transform .15s ease}
+.viewpoints>div button::before{content:"";width:6px;height:6px;border-radius:50%;border:1.5px solid currentColor;flex:0 0 auto}
+.viewpoints button:hover{background:rgba(255,255,255,.14)}
+.viewpoints button:active{transform:scale(.97)}
+.viewpoints button[aria-pressed=true]{background:#fff;color:var(--blue);border-color:#fff}
+.viewpoints button[aria-pressed=true]::before{background:currentColor}
+.viewpoints button:focus-visible,.weather-readout button:focus-visible,.rotate-btn:focus-visible{outline:2px solid var(--area);outline-offset:2px}
+.viewpoints .scene-source{display:block;margin:6px auto 0;min-height:0;border:0;padding:0;font-size:8.5px;font-weight:800;letter-spacing:.04em;text-decoration:underline;text-underline-offset:2px;opacity:.78}
+.viewpoints .scene-source:hover{background:transparent;opacity:1}
+@media(max-width:1000px){.viewpoints{bottom:108px;left:18px;transform:none}.viewpoints button{min-height:26px;padding:4px 10px 4px 8px;font-size:9.5px}}
+.rotate-btn,.rotate-btn.on{background:var(--blue);border:2px solid #fff;color:#fff;box-shadow:0 8px 18px rgba(18,26,70,.28)}
+.rotate-btn:hover{background:#353d94}
 </style>
 </head>
 <body>
